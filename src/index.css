@@ -1,13 +1,89 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand";
+  color: rgb(24, 23, 23);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.cont{
+  margin-left: 3%;
+  font-size: 25px;
+}
+
+.innercont{
+  margin-left: -5px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.tablestyle{
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+
+.avatar{
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.propicture{
+  padding-left: 5%; 
+  width: 30%;
+  height: 10%; 
+}
+
+.paginate{
+  margin-left: 90%;
+}
+
+.profilehead{
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.profilehead h3{
+  text-align: center;
+  color:rgb(86, 86, 109);
+}
+
+.horizonline{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  color: rgb(104, 100, 94);
+}
+
+.firstpart{
+  display: flex;
+}
+
+.shorthorizonline{
+  margin-left: 32%;
+  margin-right: 5%;
+  color: rgb(104, 100, 94);
+}
+
+.fistinner{
+  display: block;
+}
+
+.fistinner h5{ 
+   margin-left: 15%;
+   color: rgb(81, 195, 230);
+   font-style: italic;
+   font-weight: bold;
+}
+
+.secondpart{
+   padding-left: 32%;
+}
+
+.secondpart h6{
+   font-weight: bold;
+   color: rgb(185, 187, 187);
+   padding-bottom: 5%;
 }
