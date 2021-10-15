@@ -2,6 +2,29 @@ import React from 'react'
 import {Table} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
+const TableItem = ({
+        id,
+        avatar,
+        first_name,
+        last_name,
+        email
+    }) => {
+
+    return (
+        <tbody key={id}>
+            <tr>
+                <td>{id}</td>
+                <td><img className="avatar" src={avatar} alt="profile" style={{cursor:'pointer'}}/></td>
+                <td> {first_name}</td>
+                <td>{last_name}</td>
+                <td>{email}</td>
+                <td> active</td>
+                <td> <Link to={`/users/${id}`}> view profile </Link></td>
+                {/* <td><FcAutomatic style={{color:'red', cursor:'pointer'}}/></td> */}
+            </tr>
+        </tbody>
+    );
+}
 
 export const TableComponent = ({users}) => {
     return (
@@ -18,20 +41,16 @@ export const TableComponent = ({users}) => {
                     <th>View</th>
                     </tr>
                 </thead>
-                {users.length && users.map((user)=>{
+                {users.length > 0 && users.map((user)=>{
                     return(
-                        <tbody key={user.id}>
-                            <tr>
-                            <td>{user.id}</td>
-                            <td><img className="avatar" src={user.avatar} alt="profile" style={{cursor:'pointer'}}/></td>
-                            <td> {user.first_name}</td>
-                            <td>{user.last_name}</td>
-                            <td>{user.email}</td>
-                            <td> active</td>
-                            <td> <Link to={`/users/${user.id}`}> view profile </Link></td>
-                            {/* <td><FcAutomatic style={{color:'red', cursor:'pointer'}}/></td> */}
-                            </tr>
-                        </tbody>
+                        <TableItem 
+                            key={user.id}
+                            id={user.id}
+                            avatar={user.avatar}
+                            first_name={user.first_name}
+                            last_name={user.last_name}
+                            email={user.email}
+                        />
                     )
                 })}
                 

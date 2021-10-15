@@ -5,6 +5,41 @@ import { MdEmail, MdHomeWork} from 'react-icons/md';
 import { BsTelephoneFill} from 'react-icons/bs';
 import {useState, useEffect} from 'react';
 
+const User = ({ data }) => {
+
+    return (
+        <>
+            <div className="firstpart">
+                <img className="propicture" src={data.avatar} alt="profile"/>
+                <div className="fistinner">
+                    <div className="firstpart">
+                        <h1 style={{paddingLeft:'15%'}}>{data.first_name}</h1>
+                        <h1 style={{paddingLeft:'3%'}}>{data.last_name}</h1>
+                    </div>
+                    <h5>Designation</h5>
+                </div>
+            </div>
+            <hr className="shorthorizonline"/>
+            <div className="secondpart">
+                <h6>Personal Information</h6>
+                <div className="firstpart">
+                    <h5><MdEmail/></h5>
+                    <h5 style={{paddingLeft:"3%"}}>{data.email}</h5>
+                </div>
+                <div className="firstpart">
+                    <h5><BsTelephoneFill/></h5>
+                    <h5 style={{paddingLeft:"3%"}}> 0771234567 </h5>
+                </div>
+                <div className="firstpart">
+                    <h5><MdHomeWork/></h5>
+                    <h5 style={{paddingLeft:"3%"}}> No xx, xxxxxx xxxxx, xxxxx</h5>
+                </div>
+            </div>
+            <hr className="shorthorizonline"/>
+        </>
+    );
+}
+
 export const UserComponent = () => {
 
     const { id } = useParams();
@@ -31,33 +66,7 @@ export const UserComponent = () => {
                 <h3> <FaUserCircle /> Personal Profile </h3>
                 <hr className="horizonline"/>
             </div>
-            <div className="firstpart">
-                <img className="propicture" src={user.avatar} alt="profile"/>
-                    <div className="fistinner">
-                        <div className="firstpart">
-                            <h1 style={{paddingLeft:'15%'}}>{user.first_name}</h1>
-                            <h1 style={{paddingLeft:'3%'}}>{user.last_name}</h1>
-                        </div>
-                        <h5>Designation</h5>
-                    </div>
-            </div>
-            <hr className="shorthorizonline"/>
-            <div className="secondpart">
-                <h6>Personal Information</h6>
-                <div className="firstpart">
-                    <h5><MdEmail/></h5>
-                    <h5 style={{paddingLeft:"3%"}}>{user.email}</h5>
-                </div>
-                <div className="firstpart">
-                    <h5><BsTelephoneFill/></h5>
-                    <h5 style={{paddingLeft:"3%"}}> 0771234567 </h5>
-                </div>
-                <div className="firstpart">
-                    <h5><MdHomeWork/></h5>
-                    <h5 style={{paddingLeft:"3%"}}> No xx, xxxxxx xxxxx, xxxxx</h5>
-                </div>
-            </div>
-            <hr className="shorthorizonline"/>
+            <User data={user} />
         </div>
     )
 }
